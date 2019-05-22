@@ -7,5 +7,12 @@
     <fragment android:id="@+id/main_dest" android:name="com.example.patientsandmedication.MainFragment"
               android:label="fragment_main" tools:layout="@layout/fragment_main"/>
     <fragment android:id="@+id/patients_dest" android:name="com.example.patientsandmedication.PatientsFragment"
-              android:label="fragment_patients" tools:layout="@layout/fragment_patients"/>
+              android:label="fragment_patients" tools:layout="@layout/fragment_patients">
+        <action android:id="@+id/action_patients_dest_to_detail_dest" app:destination="@id/detail_dest"/>
+    </fragment>
+    <fragment android:id="@+id/detail_dest"
+              android:name="com.example.patientsandmedication.PatientDetailsFragment"
+              android:label="fragment_patient_details" tools:layout="@layout/fragment_patient_details">
+        <argument android:name="patient" app:argType="com.example.patientsandmedication.Patient"/>
+    </fragment>
 </navigation>

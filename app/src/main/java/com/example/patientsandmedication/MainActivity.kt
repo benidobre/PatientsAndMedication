@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
+import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,15 +12,16 @@ class MainActivity : AppCompatActivity() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-//                textMessage.setText(R.string.title_home)
+               findNavController(R.id.nav_host).navigate(R.id.main_dest)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-//                textMessage.setText(R.string.title_dashboard)
+                findNavController(R.id.nav_host).navigate(R.id.patients_dest)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-//                textMessage.setText(R.string.title_notifications)
+
+                findNavController(R.id.nav_host).navigate(R.id.detail_dest)
                 return@OnNavigationItemSelectedListener true
             }
         }
